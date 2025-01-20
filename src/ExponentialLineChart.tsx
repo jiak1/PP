@@ -38,32 +38,112 @@ const Stats: React.FC = () => {
 	}).format(actualValue * 0.07)
 
 	return (
-		<Box sx={{ padding: 4, maxWidth: 800, margin: '0 auto' }}>
+		<Box
+			sx={{
+				backgroundColor: '#c8c4fc73',
+				paddingLeft: '100px',
+				paddingRight: '100px',
+				paddingTop: '50px',
+				paddingBottom: '50px',
+
+				margin: '0 auto',
+				width: '100%',
+				borderRadius: '10px',
+			}}
+		>
 			{/* Title */}
-			<Typography variant="h5" gutterBottom>
-				Subscribers
+			<Typography
+				variant="h5"
+				gutterBottom
+				fontWeight={'700'}
+				fontSize={52}
+				color="#150B3F"
+				align="center"
+				fontFamily={
+					"'Barlow', 'Playfair Display', Georgia, 'Times New Roman', serif"
+				}
+			>
+				My share of revenue per year from subscriptions*
 			</Typography>
 
-			{/* Slider */}
-			<Slider
-				value={sliderValue}
-				onChange={handleSliderChange}
-				marks={marks}
-				step={null} // Prevent in-between values
-				min={0}
-				max={100}
-				valueLabelDisplay="off" // Hide default value tooltip
-			/>
+			<div style={{ display: 'flex', justifyContent: 'center' }}>
+				<div
+					style={{
+						backgroundColor: '#150B3F',
+						borderRadius: '10px',
+						paddingBottom: '15px',
+						paddingTop: '15px',
+						marginTop: '50px',
+						marginBottom: '75px',
+						width: '60%',
+					}}
+				>
+					<Typography
+						variant="h6"
+						color="#FBCA48"
+						fontWeight={'800'}
+						align="center"
+						fontSize={56}
+						fontFamily={
+							"'Barlow', 'Playfair Display', Georgia, 'Times New Roman', serif"
+						}
+					>
+						{potentialMoney}
+						<span style={{ fontWeight: '300' }}>**</span>
+					</Typography>
+				</div>
+			</div>
+			<div
+				style={{
+					backgroundColor: 'white',
+					padding: '30px 60px 30px 60px',
+					filter: 'drop-shadow(rgba(0, 0, 0, 0.2), 5px 5px 10px)',
+					borderRadius: '10px',
+				}}
+			>
+				{/* Slider */}
+				<Slider
+					value={sliderValue}
+					onChange={handleSliderChange}
+					marks={marks}
+					step={null} // Prevent in-between values
+					min={0}
+					max={100}
+					sx={{
+						color: '#150B3F', // Custom color for slider
+						'& .MuiSlider-rail': {
+							opacity: 0.5,
+							backgroundColor: '#D3D3D3', // Rail color
+						},
+						'& .MuiSlider-thumb': {
+							backgroundColor: '#150B3F', // Thumb color
+							'&:hover': {
+								boxShadow: '0 0 10px #150B3F', // Hover effect
+							},
+						},
+						'& .MuiSlider-track': {
+							backgroundColor: '#150B3F', // Track color
+						},
+					}}
+					valueLabelDisplay="off" // Hide default value tooltip
+				/>
 
-			{/* Stats Display */}
-			<Box sx={{ marginTop: 2, textAlign: 'center' }}>
-				<Typography variant="h6">
-					{actualValue.toLocaleString()} Subscribers at $199/year
-				</Typography>
-				<Typography variant="h6" color="primary">
-					Pioneers Share: {potentialMoney}/year
-				</Typography>
-			</Box>
+				{/* Stats Display */}
+				<Box sx={{ marginTop: 2, textAlign: 'center' }}>
+					<Typography
+						variant="h6"
+						fontFamily={"'Playfair Display', Georgia, 'Times New Roman', serif"}
+					>
+						Subscribers at{' '}
+						<span style={{ fontWeight: '700' }}>$199USD per annum</span>
+					</Typography>
+				</Box>
+			</div>
+			<Typography align="center" marginTop="60px" fontSize="12px">
+				*As per the Pioneer Program’s terms and conditions
+				<br />
+				**Products and services are sold in USD and payouts are in USD.
+			</Typography>
 		</Box>
 	)
 }
