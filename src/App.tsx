@@ -7,8 +7,8 @@ function App() {
 		<Router>
 			<div className="App">
 				<Routes>
-					<Route path="/" element={<Subs />} />
-					<Route path="/movie" element={<Movie />} />
+					<Route path="/movie" element={<Subs />} />
+					<Route path="/" element={<Movie />} />
 				</Routes>
 			</div>
 		</Router>
