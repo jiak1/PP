@@ -1,7 +1,7 @@
 {
-  "name": "subject-outlines",
+  "name": "pp",
   "version": "0.1.0",
-  "homepage": "https://outlines.jackdonaldson.net",
+  "homepage": "https://pp.jackdonaldson.net",
   "private": false,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",

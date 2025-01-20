@@ -19,7 +19,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: '14'
+          node-version: "14"
 
       - name: Get yarn cache
         id: yarn-cache
@@ -42,4 +42,4 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build
-          cname: outlines.jackdonaldson.net
+          cname: pp.jackdonaldson.net
