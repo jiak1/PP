@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
-import Movie from './Movie'
 import Subs from './Subs'
 
 function App() {
